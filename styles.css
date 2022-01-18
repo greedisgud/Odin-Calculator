@@ -1,0 +1,53 @@
+.main{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 60vh;
+}
+
+#screen{
+    padding: 30px 20px;
+    margin-bottom: 30px;
+    border: 2px solid black;
+    text-align: right;
+}
+
+.calculator{
+    height: 375px;
+    box-shadow: 2px 3px 8px rgba(140, 140, 140, 1);
+    padding: 20px;
+    width: 235px;
+    border-radius: 0.35em;
+    
+   
+}
+
+.buttons{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    display: grid;
+    grid-gap: 8px;
+    
+}
+
+.span-2{
+    grid-column: span 2;
+}
+
+.btn{
+    padding: 10px;
+    font-size: 22px;
+}
+
+#clearBtn{
+    background-color: rgb(247, 174, 174);
+}
+
+#deleteBtn{
+    background-color: rgb(167, 188, 250);
+}
+
+.btn:hover{
+    cursor: pointer;
+    background-color: slategray;
+}
+
