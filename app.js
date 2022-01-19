@@ -8,10 +8,16 @@ const operatorButtons = document.querySelectorAll('[data-operator]')
 const equalsButton = document.getElementById('equalsBtn')
 const clearButton = document.getElementById('clearBtn')
 const deleteButton = document.getElementById('deleteBtn')
-const pointButton = document.getElementById('decimalBtn')
+const decimalButton = document.getElementById('decimalBtn')
 const lastOperationScreen = document.getElementById('lastOperationScreen')
 const currentOperationScreen = document.getElementById('currentOperationScreen')
 
+numberButtons.forEach((button => button.addEventListener("click", () => appendNum(button.textContent))));
+operatorButtons.forEach((button => button.addEventListener("click", () => getOperator(button.textContent))));
+equalsButton.addEventListener("click", solve);
+clearButton.addEventListener("click", clear)
+deleteButton.addEventListener("click", backspace)
+decimalButton.addEventListener("click", addDecimal)
 
 
 
@@ -19,6 +25,14 @@ function appendNum(number){
     if (currentOperationScreen.textContent === "0" || shouldResetScreen)
         reset()
     currentOperationScreen.textContent += number
+}
+
+function clear(){
+    currentOperationScreen.textContent = "0"
+    lastOperationScreen.textContent= ""
+    firstNumber = ""
+    secondNumber = ""
+    currentOperation = null
 }
 
 function backspace(){
